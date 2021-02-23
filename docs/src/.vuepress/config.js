@@ -57,6 +57,7 @@ module.exports = {
             'bugfix',
             'firebase_deploy',
             'github_actions',
+            'vue_template',
           ]
         }
       ],
