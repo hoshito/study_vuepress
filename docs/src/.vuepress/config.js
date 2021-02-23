@@ -58,6 +58,7 @@ module.exports = {
             'vuepress',
             'bugfix',
             'firebase_deploy',
+            'github_actions',
           ]
         }
       ],
