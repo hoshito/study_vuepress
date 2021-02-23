@@ -1,6 +1,10 @@
 # GitHub Actionsとの連携
 
-## 設定
+mainブランチが更新された際に自動的にFirebaseにデプロイするよう設定する。
+
+ついでにプルリクエスト作成時にレビュー用のデプロイが走る（後述）ように設定する。
+
+## 自動デプロイ設定
 
 ```
 $ firebase init hosting:github
@@ -58,3 +62,21 @@ i  Writing project information to .firebaserc...
 
 ✔  Firebase initialization complete!
 ```
+
+設定した後 `$ git push origin master` にてmasterにマージすると自動的にビルド&デプロイが実行される。
+
+![github_actions001](./github_actions001.png)
+
+手動でビルド&デプロイをする際は `$ yarn build` `$ firebase deploy` の2コマンド。これを打つ代わりにgitのadd, commit, pushを打つようになるので、実行するコマンド数が減るわけではない。
+
+`$ yarn build` と `$ firebase deploy` は実行時間が少しかかるので待つ必要が無くなるというメリットと、gitのバージョン管理の癖がつくのがメリット。JavaScriptに手を加えたりするのでgitのバージョン管理の方は意外とメリットとなり得る。
+
+## レビュー用デプロイ
+
+プルリクエストを作成すると自動的にビルド&デプロイが走る。
+
+![github_actions002](./github_actions002.png)
+
+デプロイ先は本番と異なるところ。Firebaseで「プレビューチャネル」というプレビュー用のデプロイ先が用意されている。
+
+![github_actions003](./github_actions003.png)

@@ -31,3 +31,4 @@ $ firebase deploy
 
 ![test](./test.png)
 
+今回はGoogle Domainsで取得したドメインを割り当てている。Firebaseで設定した後、Google Domainsのページにて DNS > カスタムリソースレコード で名前を「vuepress」, タイプを「A」, データを(Firebaseで指定されたIPアドレス)に設定する。

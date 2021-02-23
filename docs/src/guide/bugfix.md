@@ -2,13 +2,18 @@
 
 そのままだとうまく動かないところがあるので直す。
 
-※もしかすると今は直っているかもしれないし、直し方も自己流なのでご了承を。
+※ もしかすると今は直っているかもしれないし、直し方も自己流なのでご了承を。
 
 ## 検索窓にMac限定のバグがある
 
 ### 事象
 
 検索窓に日本語を入力して変換を完了すると勝手に「検索にヒットした1件目の記事」に飛んでしまう。
+
+![bugfix001](./bugfix001.png)
+
+この図でエンターキーを押すと勝手に「Vuepressのススメ > ブログサービス」に飛んでしまう。
+
 
 ### 解決方法
 
@@ -32,7 +37,7 @@
 yarn add patch-package postinstall-postinstall
 ```
 
-バグが発生するファイル (`node_modules/@vuepress/plugin-search/SearchBox.vue`) を直接編集
+バグが発生するファイル ([`node_modules/@vuepress/plugin-search/SearchBox.vue`](https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/plugin-search/SearchBox.vue)) を直接編集
 ```
 diff --git a/node_modules/@vuepress/plugin-search/SearchBox.vue b/node_modules/@vuepress/plugin-search/SearchBox.vue
 index b47f18e..f9baa5d 100644
@@ -85,7 +90,7 @@ index b47f18e..f9baa5d 100644
 yarn patch-package @vuepress/plugin-search
 ```
 
-これで完了。buildする際にパッチを当ててくれる。
+これで完了。buildする際に自動でパッチを当ててくれる。
 
 ## VuePress Plugin SEOでエラーになるブラウザがある
 
