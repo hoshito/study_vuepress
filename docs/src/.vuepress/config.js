@@ -53,8 +53,6 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'service',
-            'vs',
             'vuepress',
             'bugfix',
             'firebase_deploy',

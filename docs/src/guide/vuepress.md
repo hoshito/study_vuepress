@@ -32,6 +32,24 @@ $ yarn dev
 
 [https://vuepress.vuejs.org/guide/getting-started.html](https://vuepress.vuejs.org/guide/getting-started.html)のページには他にも設定情報が見られるので気になったら参照しつつ触っていく。
 
-プラグイン情報は下のQiitaの記事が参考になる。
+## 文章を書く
+
+文章はMarkdown形式で書ける。お好みのエディタで書くと良い。
+
+保存するたびに `http://localhost:8000` に更新がかかるので、ブラウザ上の見た目はこちらでチェック。
+
+#### VSCode
+![vuepress001](./vuepress001.png)
+
+#### Typora
+[https://typora.io](https://typora.io)
+
+このエディタはConfluenceのように書くスペースとプレビューが同じで読みやすい。
+
+![vuepress002](./vuepress002.png)
+
+## プラグイン
+
+下のQiitaの記事が参考になる。
 
 <div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 52.5%; padding-top: 120px;"><a href="https://qiita.com/ozaki25/items/86e61b1e102c10567928" data-iframely-url="//cdn.iframe.ly/gShjYJt"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
