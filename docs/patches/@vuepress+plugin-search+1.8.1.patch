@@ -1,0 +1,42 @@
+diff --git a/node_modules/@vuepress/plugin-search/SearchBox.vue b/node_modules/@vuepress/plugin-search/SearchBox.vue
+index b47f18e..f9baa5d 100644
+--- a/node_modules/@vuepress/plugin-search/SearchBox.vue
++++ b/node_modules/@vuepress/plugin-search/SearchBox.vue
+@@ -11,9 +11,10 @@
+       @input="query = $event.target.value"
+       @focus="focused = true"
+       @blur="focused = false"
+-      @keyup.enter="go(focusIndex)"
++      @keyup.enter="goEnter(focusIndex)"
+       @keyup.up="onUp"
+       @keyup.down="onDown"
++      @compositionstart="composing = true"
+     >
+     <ul
+       v-if="showSuggestions"
+@@ -56,7 +57,8 @@ export default {
+       query: '',
+       focused: false,
+       focusIndex: 0,
+-      placeholder: undefined
++      placeholder: undefined,
++      composing: false
+     }
+   },
+ 
+@@ -177,6 +179,15 @@ export default {
+       }
+     },
+ 
++    goEnter(i) {
++      var ua = window.navigator.userAgent.toLowerCase();
++      if (ua.indexOf("mac os x") !== -1 && this.composing) {
++        this.composing = false
++        return
++      }
++      this.go(i)
++    },
++
+     go (i) {
+       if (!this.showSuggestions) {
+         return

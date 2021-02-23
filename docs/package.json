@@ -1,0 +1,24 @@
+{
+  "name": "study_vuepress",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "",
+    "email": ""
+  },
+  "repository": "/study_vuepress",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "postinstall": "patch-package"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0"
+  }
+}
