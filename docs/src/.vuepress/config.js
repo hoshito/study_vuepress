@@ -38,6 +38,10 @@ module.exports = {
         link: '/guide/',
       },
       {
+        text: 'AtCoder',
+        link: '/atcoder/'
+      },
+      {
         text: 'Config',
         link: '/config/'
       },
